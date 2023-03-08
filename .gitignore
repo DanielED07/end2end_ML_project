@@ -110,6 +110,8 @@ ENV/
 env.bak/
 venv.bak/
 
+end2endML/
+
 # Spyder project settings
 .spyderproject
 .spyproject
