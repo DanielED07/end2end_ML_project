@@ -8,6 +8,8 @@ import pandas as pd
 import sys
 import os
 
+from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
+
 @dataclass
 class DataIngestionConfig:
     raw_data_path: str = os.path.join('artifacts',"data.csv")
@@ -50,7 +52,11 @@ if __name__ == "__main__":
 
     data_tranformation = DataTransformation()
     
-    data_tranformation.initiate_data_transformation(train_data, test_data)
+    train_arr,test_arr,_ = data_tranformation.initiate_data_transformation(train_data,test_data)
+
+    modelTrainer = ModelTrainer()
+    print(modelTrainer.initiate_model_trainer(train_arr, test_arr))
+
 
 
 
